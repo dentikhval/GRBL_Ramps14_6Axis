@@ -1,5 +1,12 @@
- GRBL RAMPS 1.4 port
- By ArSi arsi@arsi.sk
+#GRBL Ramps 1.4 port for Folger Tech's 2020 Prusa i3. 
+ 
+Swapped Y and Z in ramps.h to match the 2020's setup. The axis travel is now limited to 200x200x140. The DEFAULTS_PRUSA_I3 are updated to match the 2020's Marlin firmware settings. The homing cycle allows all axes to be homed. 
+ 
+ 
+ 
+ 
+ #GRBL RAMPS 1.4 port
+ Originally By ArSi arsi@arsi.sk
 **************************************************************************************
  Steppers redirected to fastio.h from marlin firmware
  min switches remaped to AUX-3, GBRL uses pin change interrupts
