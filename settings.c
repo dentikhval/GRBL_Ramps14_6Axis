@@ -93,16 +93,31 @@ void settings_restore_global_settings() {
   settings.steps_per_mm[X_AXIS] = DEFAULT_X_STEPS_PER_MM;
   settings.steps_per_mm[Y_AXIS] = DEFAULT_Y_STEPS_PER_MM;
   settings.steps_per_mm[Z_AXIS] = DEFAULT_Z_STEPS_PER_MM;
+  settings.steps_per_mm[A_AXIS] = DEFAULT_A_STEPS_PER_MM;
+  settings.steps_per_mm[B_AXIS] = DEFAULT_B_STEPS_PER_MM;
+  settings.steps_per_mm[C_AXIS] = DEFAULT_C_STEPS_PER_MM;
+  
   settings.max_rate[X_AXIS] = DEFAULT_X_MAX_RATE;
   settings.max_rate[Y_AXIS] = DEFAULT_Y_MAX_RATE;
   settings.max_rate[Z_AXIS] = DEFAULT_Z_MAX_RATE;
+  settings.max_rate[A_AXIS] = DEFAULT_A_MAX_RATE;
+  settings.max_rate[B_AXIS] = DEFAULT_B_MAX_RATE;
+  settings.max_rate[C_AXIS] = DEFAULT_C_MAX_RATE;
+  
   settings.acceleration[X_AXIS] = DEFAULT_X_ACCELERATION;
   settings.acceleration[Y_AXIS] = DEFAULT_Y_ACCELERATION;
   settings.acceleration[Z_AXIS] = DEFAULT_Z_ACCELERATION;
+  settings.acceleration[A_AXIS] = DEFAULT_A_ACCELERATION;
+  settings.acceleration[B_AXIS] = DEFAULT_B_ACCELERATION;
+  settings.acceleration[C_AXIS] = DEFAULT_C_ACCELERATION;
+  
   settings.max_travel[X_AXIS] = (-DEFAULT_X_MAX_TRAVEL);
   settings.max_travel[Y_AXIS] = (-DEFAULT_Y_MAX_TRAVEL);
   settings.max_travel[Z_AXIS] = (-DEFAULT_Z_MAX_TRAVEL);    
-
+  settings.max_travel[A_AXIS] = (-DEFAULT_A_MAX_TRAVEL);
+  settings.max_travel[B_AXIS] = (-DEFAULT_B_MAX_TRAVEL);
+  settings.max_travel[C_AXIS] = (-DEFAULT_C_MAX_TRAVEL);  
+  
   write_global_settings();
 }
 
@@ -110,7 +125,7 @@ void settings_restore_global_settings() {
 // Helper function to clear the EEPROM space containing parameter data.
 void settings_clear_parameters() {
   uint8_t idx;
-  float coord_data[3];
+  float coord_data[6];
   memset(&coord_data, 0, sizeof(coord_data));
   for (idx=0; idx < SETTING_INDEX_NCOORD; idx++) { settings_write_coord_data(idx, coord_data); }
 }  
