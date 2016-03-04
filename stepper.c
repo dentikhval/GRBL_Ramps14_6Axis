@@ -91,6 +91,10 @@ typedef struct {
   uint32_t counter_x,        // Counter variables for the bresenham line tracer
            counter_y, 
            counter_z;
+		   counter_a;
+		   counter_b;
+		   counter_c;
+		   
   #ifdef STEP_PULSE_DELAY
     uint8_t step_bits;  // Stores out_bits output to complete the step pulse delay
   #endif
@@ -350,7 +354,11 @@ ISR(TIMER1_COMPA_vect)
         // Initialize Bresenham line and distance counters
         st.counter_x = (st.exec_block->step_event_count >> 1);
         st.counter_y = st.counter_x;
-        st.counter_z = st.counter_x;        
+        st.counter_z = st.counter_x;    
+		st.counter_a = st.counter_x;    
+        st.counter_b = st.counter_x;    
+        st.counter_c = st.counter_x;    
+
       }
 
       st.dir_outbits = st.exec_block->direction_bits ^ dir_port_invert_mask; 
@@ -360,9 +368,9 @@ ISR(TIMER1_COMPA_vect)
         st.steps[X_AXIS] = st.exec_block->steps[X_AXIS] >> st.exec_segment->amass_level;
         st.steps[Y_AXIS] = st.exec_block->steps[Y_AXIS] >> st.exec_segment->amass_level;
         st.steps[Z_AXIS] = st.exec_block->steps[Z_AXIS] >> st.exec_segment->amass_level;
-		st.steps[A_AXIS] = st.exec_block->steps[Z_AXIS] >> st.exec_segment->amass_level;
-		st.steps[B_AXIS] = st.exec_block->steps[Z_AXIS] >> st.exec_segment->amass_level;
-		st.steps[C_AXIS] = st.exec_block->steps[Z_AXIS] >> st.exec_segment->amass_level;
+		st.steps[A_AXIS] = st.exec_block->steps[A_AXIS] >> st.exec_segment->amass_level;
+		st.steps[B_AXIS] = st.exec_block->steps[B_AXIS] >> st.exec_segment->amass_level;
+		st.steps[C_AXIS] = st.exec_block->steps[C_AXIS] >> st.exec_segment->amass_level;
 
       #endif
       

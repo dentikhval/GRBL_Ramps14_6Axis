@@ -126,6 +126,10 @@
 #define WORD_X  10
 #define WORD_Y  11
 #define WORD_Z  12
+#define WORD_A  13
+#define WORD_B  14
+#define WORD_C  15
+
 
 
 
