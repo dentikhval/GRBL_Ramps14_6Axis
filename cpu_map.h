@@ -392,9 +392,9 @@
   #define X_DIRECTION_BIT   7 // MEGA2560 Digital Pin 30
   #define Y_DIRECTION_BIT   5 // MEGA2560 Digital Pin 32
   #define Z_DIRECTION_BIT   3 // MEGA2560 Digital Pin 34
-  #define X_DIRECTION_BIT   6 // MEGA2560 Digital Pin 31
-  #define Y_DIRECTION_BIT   4 // MEGA2560 Digital Pin 33
-  #define Z_DIRECTION_BIT   2 // MEGA2560 Digital Pin 35
+  #define A_DIRECTION_BIT   6 // MEGA2560 Digital Pin 31
+  #define B_DIRECTION_BIT   4 // MEGA2560 Digital Pin 33
+  #define C_DIRECTION_BIT   2 // MEGA2560 Digital Pin 35
   
   #define DIRECTION_MASK ((1<<X_DIRECTION_BIT)|(1<<Y_DIRECTION_BIT)|(1<<Z_DIRECTION_BIT)|(1<<A_DIRECTION_BIT)|(1<<B_DIRECTION_BIT)|(1<<C_DIRECTION_BIT)) // All direction bits
 
