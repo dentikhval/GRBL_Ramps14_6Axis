@@ -90,9 +90,9 @@ typedef struct {
   // Used by the bresenham line algorithm
   uint32_t counter_x,        // Counter variables for the bresenham line tracer
            counter_y, 
-           counter_z;
-		   counter_a;
-		   counter_b;
+           counter_z,
+		   counter_a,
+		   counter_b,
 		   counter_c;
 		   
   #ifdef STEP_PULSE_DELAY
